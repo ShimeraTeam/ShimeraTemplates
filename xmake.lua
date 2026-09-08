@@ -1,15 +1,13 @@
 add_rules("mode.debug", "mode.release")
 
-if is_plat("windows") then
-    set_toolchains("msvc")
-end
+add_requires("sfml 3.x", "glew", "glm")
 
-set_languages("c++23")
-
-add_requires("sfml 3.x", {configs = {graphics = true, window = true, system = true}})
-add_requires("glew")
-
-target("shimera")
+target("shimera_atp_test")
     set_kind("binary")
+    set_languages("c++23")
     add_files("src/*.cpp")
-    add_packages("sfml", "glew")
+    add_packages("sfml", "glew", "glm")
+
+    -- Add the static version of Shimera
+
+    set_rundir("$(builddir)/$(plat)/$(arch)/$(mode)")
