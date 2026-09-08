@@ -1,0 +1,21 @@
+# xmake
+/.xmake/
+/build/
+
+# Compiled binaries
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
